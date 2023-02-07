@@ -227,7 +227,21 @@ def main_python_command_line(args):
     save_path = check_if_saving_directory_exists(save_path)
     #create saving directory
     os.mkdir(save_path)
+    print('--------------------------------------------------------')
+    input('Saving directory successfully created, press enter to continue')
     process_video(file, save_path, blur_ksize = ksize)
+    print('--------------------------------------------------------')
+    print('video successfully processed ! ')
+    print(""""                                                                                                                                                                                                                                                                                                 
+   (                                    )     
+   )\               (  (  (       )  ( /(     
+ (((_)   (    (     )\))( )(   ( /(  )\())(   
+ )\___   )\   )\ ) ((_))\(()\  )(_))(_))/ )\  
+((/ __| ((_) _(_/(  (()(_)((_)((_)_ | |_ ((_) 
+ | (__ / _ \| ' \))/ _` || '_|/ _` ||  _|(_-< 
+  \___|\___/|_||_| \__, ||_|  \__,_| \__|/__/ 
+                   |___/                      
+""")
 
 def main_app():
     print('--------------------------------------------------------')
@@ -253,7 +267,7 @@ def main_app():
     process_video(file, save_path)
     print('--------------------------------------------------------')
     print('video successfully processed ! ')
-    print(""""                                                                                                                                                                                                                                                         
+    print("""                                                                                                                                                                                                                                                     
         
                                               
    (                                    )     
@@ -267,13 +281,14 @@ def main_app():
 """)
 
 if __name__ == '__main__':
-    #Uncomment following lines to use command line version
+    #Comment following lines to use command line version
     #----------------------------------------
-    # arguments = argparse.ArgumentParser()
-    # arguments.add_argument('file', help ='String containing the path to the svg file')
-    # arguments.add_argument('-save_path', type = str, help = 'This argument is used to create the saving folder. It can either be a full path to chose the location of the directory or it can merely be a name. If the later is used, the folder will be created at the same location as this python script' )
-    # arguments.add_argument('-ksize', metavar = 'kernel size', default = (3,3), help = 'Kernel size for the gaussian blur apply in the image processing. Default is (3,3)')
-    # args = vars(arguments.parse_args())
-    # main_python_command_line(args)
+    arguments = argparse.ArgumentParser()
+    arguments.add_argument('file', help ='String containing the path to the video file')
+    arguments.add_argument('-save_path', type = str, help = 'This argument is used to create the saving folder. It can either be a full path to chose the location of the directory or it can merely be a name. If the later is used, the folder will be created at the same location as this python script' )
+    arguments.add_argument('-ksize', metavar = 'kernel size', default = (3,3), help = 'Kernel size for the gaussian blur apply in the image processing. Default is (3,3)')
+    args = vars(arguments.parse_args())
+    main_python_command_line(args)
     #----------------------------------------
-    main_app()
+    #Uncomment the following lines to use tkinter version
+    # main_app()
