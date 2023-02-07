@@ -17,7 +17,7 @@ Helper for the command line version :
 usage: convert-video-to-svg.py [-h] [-save_path SAVE_PATH] [-ksize kernel size] file
 
 positional arguments:
-  file                  String containing the path to the svg file
+  file                  String containing the path to the video file
 
 options:
   -h, --help            show this help message and exit
